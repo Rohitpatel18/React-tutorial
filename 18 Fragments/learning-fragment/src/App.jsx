@@ -3,37 +3,39 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
 
 function App() {
   
    let foodItems=["sabzi","roti","Roti","salad","green Vegetable","orange","apple"];
     // let foodItems = [{ test: "hardik", test: "viki" }];
-
-
-
+    let textToShow="Food Item Entered by user";
     
-    
-    
-    //  let foodItems=[];
+    const handleOnChange =(event) =>{
+      console.log(event.target.value);
+      textToShow=event.target.value;
+  }
 
-    // let emptyMessage=
-    // foodItems.length === 0? <h3>I am  still hungry</h3> : null;
+
 
 
 return (
-  <>
-  <React.Fragment>
+  <Container>
+  
     <h1 className="food-heading">Healthy Food</h1>
-    {/* {emptyMessage} */}
+    
     <ErrorMessage items={foodItems}></ErrorMessage>
+    <FoodInput handleOnChange={handleOnChange}></FoodInput>
+    <p>{textToShow}</p>
     <FoodItems items={foodItems}></FoodItems>
     
-    </React.Fragment>
-    </>
+   
+    </Container>
 );
 }
 
-export default App
+export default App;
 
 
 
