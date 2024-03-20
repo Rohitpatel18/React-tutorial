@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- <style>
+  body {
+    background-color:red;
+    color: blue;
+  }
+</style> -->
+  <body>
+    <!-- <script>
+
+        for (i=1; i<=5; i++)
+        {
+            for (j=1; j<=i; j++)
+            {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        
+        </script> -->
+
+    <!--  output
+        *
+        **
+        ***
+        ****
+        ***** -->
+
+    <!--  2 -->
+
+    <!-- <script>
+            for  (i=5; i>=1; i--)
+            {
+                for (j=1; j<=i; j++)
+                {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        </script> -->
+
+    <!-- 2 output 
+        
+
+*****
+****
+***
+**
+*
+-->
+
+    <!-- <script>
+function Pyramid(demo1) {
+       for (let i = 0; i < demo1; i++) {
+         let row = "";
+         for (let j = 0; j < demo1 - i - 1; j++) {
+           row += " ";
+         }
+         for (let k = 0; k < 2 * i + 1; k++) {
+           row += "*";
+         }
+         console.log(row);
+       }
+     }
+     const demo1 = 5;
+     Pyramid(demo1);
+</script> -->
+
+    <!-- 3 
+
+    
+     *
+    ***
+   *****
+  *******
+ *********
+-->
+    <!-- 
+<script>
+    function ReversePyramid(demo2) {
+   for (let i = demo2 - 1; i >= 0; i--) {
+     let row = "";
+     for (let j = 0; j < demo2 - i - 1; j++) {
+       row += " ";
+     }
+     for (let k = 0; k < 2 * i + 1; k++) {
+       row += "*";
+     }
+     console.log(row);
+   }
+ }
+
+ const demo2 = 5;
+ ReversePyramid(demo2);
+</script> -->
+
+    <!-- 4 
+
+ *********
+  *******
+   *****
+    ***
+     *
+ -->
+    <!-- 
+ <script>
+
+  var rows = 6;
+  
+  for (var i = rows; i >= 1; i--) {
+      
+      for (var k = 1; k <= (rows - i); k++) {
+          document.write("&nbsp;");
+      }
+
+      for (var p = 0; p < rows; p++) {
+          
+          for (var j = 1; j <= i; j++) {
+              document.write('* ');
+          }
+          
+          if (p < rows) {
+              for (var k = 1; k <= (rows - i); k++) {
+                  document.write("&nbsp&nbsp&nbsp;");
+              }
+          }
+          document.write("&nbsp;");
+      }
+      
+      document.write('<br>');
+  }
+  
+  </script> -->
+
+    <!-- <script>
+  function printPattern(rows) {
+    for (var i = rows; i >= 1; i--) {
+            document.write('&nbsp'.repeat(rows - i) + '* '
+            .repeat(i)+'&nbsp' + '&nbsp&nbsp&nbsp'.repeat(rows - i) + '* '
+            .repeat(i) +'&nbsp'+'&nbsp&nbsp&nbsp'.repeat(rows - i) + '* '
+            .repeat(i) +'&nbsp'+'&nbsp&nbsp&nbsp'.repeat(rows - i) + '* '
+            .repeat(i) +'&nbsp' +'&nbsp&nbsp&nbsp'.repeat(rows - i) + '* '
+            .repeat(i)+ '<br>');
+        }
+    }
+    
+    var rows = 5;
+    printPattern(rows);
+    
+</script> -->
+
+    <!--  
+
+<script>
+  const rows = 5;
+      for (let i = rows; i >= 1; i--) {
+         let row = '';
+         for (let j = 1; j <= rows; j++) {
+            for (let k = 0; k < rows - i; k++) {
+               row += ' ';
+            }
+            for (let l = 0; l < i; l++) {
+               if (i == 1) {
+                  row += `5 `
+               }
+               else {
+                  if (j % 2 === 0) {
+                     row += `- `;
+                  }
+                  else {
+                     row += `* `;
+                  }
+               }
+
+
+            }
+            for (let m = 0; m < rows - i; m++) {
+               row += ' ';
+            }
+            row += ' ';
+         }
+         console.log(row);
+
+      }
+
+</script>
+-->
+
+<!-- <script>
+//  const rows = 5;
+//  for (let i = 0; i < rows; i++) {
+//      let line = "";
+//      for (let j = 0; j < rows - i - 1; j++) {
+//          line += " ";
+//      }
+//      for (let j = 0; j <= i * 2; j++) {
+//          line += i;
+//      }
+    
+//      console.log(line );
+//  }
+//  for (let i = rows - 2; i >= 0; i--) {
+//      let line = "";
+//      for (let j = 0; j < rows - i - 1; j++) {
+//          line += " ";
+//      }
+//      for (let j = 0; j <= i * 2; j++) {
+//          line += i;
+//      }
+   
+//      console.log(line);
+//  } 
+
+-->
+
+
+
+
+<script>
+const rows = 5;
+
+
+function generateLine(spacesCount, numbersCount, number) {
+    let line = "";
+    for (let i = 0; i < spacesCount; i++) {
+        line += " ";
+    }
+    for (let i = 0; i < numbersCount; i++) {
+        line += number;
+    }
+    return line;
+}
+
+
+
+
+
+for (let i = 0; i < rows; i++) {
+    const spacesCount = rows - i - 1;//4
+    const numbersCount = i * 2 + 1;//1
+    console.log(generateLine(spacesCount, numbersCount, i));
+}
+
+
+for (let i = rows - 2; i >= 0; i--) {
+    const spacesCount = rows - i - 1;//1
+    const numbersCount = i * 2 + 1;//7
+    console.log(generateLine(spacesCount, numbersCount, i));
+}
+
+</script>
+
+  </body>
+</html>
